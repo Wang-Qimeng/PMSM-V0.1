@@ -11,6 +11,7 @@
 "project\stm32f4xx_it.o"
 "project\stm32f4xx_hal_msp.o"
 "project\key.o"
+"project\pid.o"
 "project\system_stm32f4xx.o"
 "project\stm32f4xx_hal_adc.o"
 "project\stm32f4xx_hal_adc_ex.o"

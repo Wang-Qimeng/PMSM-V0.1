@@ -41,3 +41,4 @@ project\dma.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 project\dma.o: ../Core/foc/foc_algorithm.h
 project\dma.o: ../Core/Inc/adc.h
 project\dma.o: ../Core/Inc/tim.h
+project\dma.o: ..\Core\pid\pid.h

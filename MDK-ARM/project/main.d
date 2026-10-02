@@ -40,6 +40,7 @@ project\main.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 project\main.o: ../Core/foc/foc_algorithm.h
 project\main.o: ../Core/Inc/adc.h
 project\main.o: ../Core/Inc/tim.h
+project\main.o: ..\Core\pid\pid.h
 project\main.o: ../Core/Inc/dma.h
 project\main.o: ../Core/Inc/usart.h
 project\main.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -41,4 +41,5 @@ project\gpio.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 project\gpio.o: ../Core/foc/foc_algorithm.h
 project\gpio.o: ../Core/Inc/adc.h
 project\gpio.o: ../Core/Inc/tim.h
+project\gpio.o: ..\Core\pid\pid.h
 project\gpio.o: ..\Core\key\key.h

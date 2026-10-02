@@ -41,3 +41,4 @@ project\key.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 project\key.o: ../Core/foc/foc_algorithm.h
 project\key.o: ../Core/Inc/adc.h
 project\key.o: ../Core/Inc/tim.h
+project\key.o: ..\Core\pid\pid.h

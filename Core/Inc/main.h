@@ -29,13 +29,13 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
 
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "pmsm.h"
 #include "foc_algorithm.h"
 #include "adc.h"
 #include "tim.h"
+#include "pid.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -61,7 +61,12 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-
+#define key0_Pin GPIO_PIN_2
+#define key0_GPIO_Port GPIOE
+#define key1_Pin GPIO_PIN_3
+#define key1_GPIO_Port GPIOE
+#define key3_Pin GPIO_PIN_4
+#define key3_GPIO_Port GPIOE
 
 /* USER CODE BEGIN Private defines */
 

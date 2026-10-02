@@ -40,3 +40,4 @@ project\stm32f4xx_hal_msp.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 project\stm32f4xx_hal_msp.o: ../Core/foc/foc_algorithm.h
 project\stm32f4xx_hal_msp.o: ../Core/Inc/adc.h
 project\stm32f4xx_hal_msp.o: ../Core/Inc/tim.h
+project\stm32f4xx_hal_msp.o: ..\Core\pid\pid.h

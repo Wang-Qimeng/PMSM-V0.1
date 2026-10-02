@@ -40,4 +40,5 @@ project\stm32f4xx_it.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 project\stm32f4xx_it.o: ../Core/foc/foc_algorithm.h
 project\stm32f4xx_it.o: ../Core/Inc/adc.h
 project\stm32f4xx_it.o: ../Core/Inc/tim.h
+project\stm32f4xx_it.o: ..\Core\pid\pid.h
 project\stm32f4xx_it.o: ../Core/Inc/stm32f4xx_it.h

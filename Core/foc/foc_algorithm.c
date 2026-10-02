@@ -35,13 +35,16 @@ void Park_Transf(Current_Alpha_Beta_DEF current_alpha_beta, Transf_Cos_Sin_DEF c
 *********************************************************************************************************/
 void FOC_Init(void)
 {   
+    rtX.Id_ref=0.0f;
+    rtX.Iq_ref=1.5f;
+    
     rtX.Udc = 24.0f;    /* 母线电压 */
     rtX.Tpwm = 8400.0f*2;
     rtX.Dir=Clw;    
 	Voltage_DQ.Vd=0.0f;
 	Voltage_DQ.Vq=1.5f;
 
-    
+   
 
 }
 
@@ -55,6 +58,7 @@ void FOC_Init(void)
 /*********************************************************************************************************
 * 功  能: FOC算法     
 * 形  参: 无
+* 采样时间
 * 说  明: 执行FOC控制流程，用PI控制器控制电流环
 *********************************************************************************************************/
 void FOC_Run(void)
@@ -67,8 +71,9 @@ void FOC_Run(void)
     Clarke_Transf(Current_Iabc, &Current_Ialpha_beta);          /* Clarke变换 */
     Angle_To_Cos_Sin(rtX.theta, &Transf_Cos_Sin);            /* 计算三角函数 */
     Park_Transf(Current_Ialpha_beta, Transf_Cos_Sin, &Current_Id_Iq); /* Park变换 */
-
-
+    
+    PID_Calc(&Current_D_PID,rtX.Id_ref,Current_Id_Iq.Id,&Voltage_DQ.Vd);    /* 计算ID电流 */
+    PID_Calc(&Current_Q_PID,rtX.Iq_ref,Current_Id_Iq.Iq,&Voltage_DQ.Vq);    /* 计算IQ电流 */
     Rev_Park_Transf(Voltage_DQ, Transf_Cos_Sin, &Voltage_Alpha_Beta);    /* Revpark变换 */
     SVPWM_Calc(Voltage_Alpha_Beta, rtX.Udc, rtX.Tpwm);        /* SVPWM */
 }

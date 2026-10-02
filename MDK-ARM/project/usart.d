@@ -41,4 +41,5 @@ project\usart.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 project\usart.o: ../Core/foc/foc_algorithm.h
 project\usart.o: ../Core/Inc/adc.h
 project\usart.o: ../Core/Inc/tim.h
+project\usart.o: ..\Core\pid\pid.h
 project\usart.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h

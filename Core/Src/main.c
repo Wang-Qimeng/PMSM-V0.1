@@ -80,23 +80,6 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
-  /* 按键 PE2 初始化：上拉输入，按下为低电平 */
-//  __HAL_RCC_GPIOE_CLK_ENABLE();
-//  GPIO_InitTypeDef KEY_InitStruct = {0};
-//  KEY_InitStruct.Pin  = GPIO_PIN_2;
-//  KEY_InitStruct.Mode = GPIO_MODE_INPUT;
-//  KEY_InitStruct.Pull = GPIO_PULLUP;
-//  HAL_GPIO_Init(GPIOE, &KEY_InitStruct);
-//  
-//   KEY_InitStruct.Pin  = GPIO_PIN_3;
-//  KEY_InitStruct.Mode = GPIO_MODE_INPUT;
-//  KEY_InitStruct.Pull = GPIO_PULLUP;
-//  HAL_GPIO_Init(GPIOE, &KEY_InitStruct);
-//  
-//  KEY_InitStruct.Pin  = GPIO_PIN_4;
-//  KEY_InitStruct.Mode = GPIO_MODE_INPUT;
-//  KEY_InitStruct.Pull = GPIO_PULLUP;
-//  HAL_GPIO_Init(GPIOE, &KEY_InitStruct);
 
   /* USER CODE END Init */
 
@@ -109,7 +92,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  key_init();
   MX_DMA_Init();
   MX_TIM1_Init();
   MX_ADC1_Init();
@@ -119,7 +101,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   Motor_Init();
-
 
 
   /* USER CODE END 2 */
@@ -141,9 +122,8 @@ int main(void)
       else if(key==key2)
     {
 	  }
-    //输出三项波形，clarke变换后的电流,park变换后的电流
-   printf("%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\r\n",I_uvw[0],I_uvw[1],I_uvw[2],Current_Id_Iq.Id,Current_Id_Iq.Iq,Current_Ialpha_beta.Ialpha,Current_Ialpha_beta.Ibeta);
-
+    
+   printf("%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\r\n",rtX.Id_ref,rtX.Iq_ref,Current_Id_Iq.Id,Current_Id_Iq.Iq,Voltage_DQ.Vd,Voltage_DQ.Vq);
 
 	 
     /* USER CODE END WHILE */
@@ -233,4 +213,3 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-

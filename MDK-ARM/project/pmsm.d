@@ -41,3 +41,4 @@ project\pmsm.o: ../Core/Inc/main.h
 project\pmsm.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 project\pmsm.o: ../Core/Inc/adc.h
 project\pmsm.o: ../Core/Inc/tim.h
+project\pmsm.o: ..\Core\pid\pid.h
